@@ -1,0 +1,15 @@
+cmd : docker build
+	just build a image, cp files by using COPY in Dockerfile
+
+cmd : docker run
+	docker run --name xhh -it -d xhtest:latest
+	--name and -d parameters cann't be changed order
+
+
+Dockerfile
+----ENTRYPOINT
+	Must run the current process all the time to prevent from the container exiting....
+----COPY
+	COPY A(source dir) B(object dir) copy all files and dirs under A to B
+	if want to make A under B should do like this: COPY A B/A
+
