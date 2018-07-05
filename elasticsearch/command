@@ -1,0 +1,13 @@
+Cluster Health
+ipAndPort
+
+1. curl ipAndPort/_cat/health?v
+	Green(cluster is fully functional)
+	Yellow(all data is avaliable but some replicas are not yet allocated)
+	Red(some data is not avaliable for whatever reason)
+2. curl ipAndPort/_cat/nodes?v
+
+List All Indices
+1. curl ipAndPort/_cat/indices?v
+
+
