@@ -1,0 +1,11 @@
+list kafka topics
+kafka/bin/kafka-topics.sh --zookeeper $zkHost:$zkPort --list
+
+create kafka topic
+kafka/bin/kafka-topics.sh --create --zookeeper $zkHost:$zkPort,$zkHost:$zkPort,$zkHost:$zkPort/$Chroot --replication-factor 3 --partitions 64 --topic $topicName
+
+get consumer info(such as offset)
+kafka/bin/kafka-consumer-groups.sh --bootstrap-server $brokerHost:$brokerPort --new-consumer --group $consumerGroup --describe
+
+get topic partition offset
+kafka/bin/kafka-run-class.sh kafka.tools.GetOffsetShell --topic $topicName --time -1 --broker-list $brokerHost:$brokerPort
